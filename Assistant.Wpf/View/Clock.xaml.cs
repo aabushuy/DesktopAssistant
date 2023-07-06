@@ -13,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Assistant.Wpf
+namespace Assistant.Wpf.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Clock.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Clock : UserControl
     {
-        public MainWindow()
+        public Clock()
         {
             InitializeComponent();
-            
         }
     }
 }
