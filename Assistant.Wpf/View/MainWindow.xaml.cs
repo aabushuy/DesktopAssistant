@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System.Windows;
+using WpfScreenHelper;
 
 namespace Assistant.Wpf
 {
@@ -7,9 +9,15 @@ namespace Assistant.Wpf
     /// </summary>
     public partial class MainWindow : Window
     {
+        private const int _marginWindow = 40;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            var selectedScreen = Screen.AllScreens.First();
+
+            Left = selectedScreen.WorkingArea.Right - Width - _marginWindow;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Timers;
+﻿using System.Threading.Tasks;
+using System.Timers;
 
 namespace Assistant.Wpf.ViewModel
 {
@@ -19,6 +20,8 @@ namespace Assistant.Wpf.ViewModel
             _timer.Start();
         }
 
-        protected abstract void DoLoop(object? sender, ElapsedEventArgs e);
+        protected virtual void DoLoop(object? sender, ElapsedEventArgs e) => DoLoop();
+
+        protected abstract Task DoLoop();
     }
 }

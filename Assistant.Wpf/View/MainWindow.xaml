@@ -9,29 +9,19 @@
         Title="MainWindow"         
         Height="900"
         Width="300"
-        Top="40"
+        Top="0"
         Left="3500"
         AllowsTransparency="True" 
         Background="{x:Null}"
         Foreground="White"
         WindowStyle="None">
 
-    <Window.DataContext>
-        <vm:MainWindowViewModel/>
-    </Window.DataContext>
-
     <StackPanel Orientation="Vertical">
-        <v:Clock/>
-        <TextBlock>Weather</TextBlock>
-        <TextBlock>Calendar</TextBlock>
+        <v:Clock Margin="0 20 0 10"/>
+        <v:Weather Margin="0 10"/>
+        <v:Calendar Margin="0 10"/>
         <TextBlock>Disk info1</TextBlock>
         <TextBlock>Disk info2</TextBlock>
         <TextBlock>Disk info3</TextBlock>
-        
-        <ComboBox
-            Width="300"
-            ItemsSource="{Binding Screens}"
-            DisplayMemberPath="DeviceName"
-            SelectedValue="{Binding SelectedScreen, UpdateSourceTrigger=PropertyChanged}"/>
     </StackPanel>
 </Window>

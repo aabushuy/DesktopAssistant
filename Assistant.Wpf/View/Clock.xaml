@@ -13,7 +13,7 @@
     
     <Border CornerRadius="16">
         <Border.Background>
-            <SolidColorBrush Color="Black" Opacity="0.2" />
+            <SolidColorBrush Color="Black" Opacity="0.3" />
         </Border.Background>
         <Grid>
             <Grid.ColumnDefinitions>

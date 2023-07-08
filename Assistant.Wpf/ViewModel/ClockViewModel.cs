@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Timers;
 
 namespace Assistant.Wpf.ViewModel
@@ -32,7 +33,11 @@ namespace Assistant.Wpf.ViewModel
         {            
         }
 
-        protected override void DoLoop(object? sender, ElapsedEventArgs e)
-            => CurrentTime = DateTime.Now;
+        protected override Task DoLoop()
+        {
+            CurrentTime = DateTime.Now;
+
+            return Task.CompletedTask;
+        }
     }
 }
