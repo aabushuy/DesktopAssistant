@@ -50,6 +50,14 @@ namespace Assistant.Wpf.ViewModel
                 }
             }
 
+            RaisePropertyChanged(nameof(MonthName));
+            RaisePropertyChanged(nameof(FirstWeek));            
+            RaisePropertyChanged(nameof(SecondWeek));
+            RaisePropertyChanged(nameof(ThirdWeek));
+            RaisePropertyChanged(nameof(FourthWeek));
+            RaisePropertyChanged(nameof(FifthWeek));
+            RaisePropertyChanged(nameof(SixthWeek));
+
             return Task.CompletedTask;
         }
     }
