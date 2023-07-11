@@ -7,7 +7,7 @@ namespace Assistant.Wpf.Models
     {
         private DriveInfo DriveInfo { get; }
 
-        public string Name => $"{DriveInfo.VolumeLabel} ({DriveInfo.Name}:)";
+        public string Name => $"{DriveInfo.VolumeLabel} ({DriveInfo.Name})";
 
         public string SizeText => $"{GetDiskSizeText(DriveInfo.AvailableFreeSpace)} free of {GetDiskSizeText(DriveInfo.TotalSize)}";
 

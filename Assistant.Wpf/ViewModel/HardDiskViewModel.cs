@@ -29,6 +29,7 @@ namespace Assistant.Wpf.ViewModel
         {
             var drives = DriveInfo
                 .GetDrives()
+                .Where(d => d.IsReady)
                 .Select(d => new HardDriveInfo(d));
 
             DriveInfos = new ObservableCollection<HardDriveInfo>(drives);

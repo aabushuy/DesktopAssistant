@@ -12,6 +12,8 @@ namespace Assistant.Wpf.ViewModel
     {
         private readonly IWeatherService _weatherService;
         private WeatherForecast _forecast = new();
+        private const int _hourlyCount = 7;
+
 
         private DateTime _updateTime;
         public string CurrentTemp => CastTemperatureToString(_forecast.Temperature);
@@ -67,7 +69,7 @@ namespace Assistant.Wpf.ViewModel
                 _forecast.Hourly
                     .Where(h => h.DT > UpdateTime)
                     .OrderBy(h => h.DT)
-                    .Take(6));
+                    .Take(_hourlyCount));
 
             Alerts = new ObservableCollection<WeatherAlert>(
                 _forecast.WeatherAlerts

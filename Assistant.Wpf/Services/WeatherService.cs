@@ -112,7 +112,9 @@ namespace Assistant.Wpf.Services
 
         private static void ParseAlerts(WeatherForecast forecast, dynamic data)
         {
-            foreach (var alert in data.alerts)
+            var alerts = data.alerts ?? Array.Empty<dynamic>();
+
+            foreach (var alert in alerts)
             {
                 forecast.WeatherAlerts.Add(new WeatherAlert()
                 {

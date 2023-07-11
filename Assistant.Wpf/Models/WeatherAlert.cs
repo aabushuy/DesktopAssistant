@@ -13,5 +13,7 @@ namespace Assistant.Wpf.Models
         public string EventName { get; init; }
 
         public string Description { get; init; }
+
+        public string SummaryDescription => $"{EventName}, {Description}";
     }
 }

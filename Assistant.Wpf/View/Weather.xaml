@@ -13,7 +13,7 @@
 
     <Border CornerRadius="16">
         <Border.Background>
-            <SolidColorBrush Color="Black" Opacity="0.3" />
+            <SolidColorBrush Color="Black" Opacity="0.5" />
         </Border.Background>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -90,7 +90,7 @@
                                 <TextBlock Text="{Binding Temperature, StringFormat={}{0:0}°C}"
                                            HorizontalAlignment="Center"
                                            FontWeight="Bold"/>
-                                <TextBlock Text="{Binding Pop, StringFormat={}{0}%}"
+                                <TextBlock Text="{Binding Pop, StringFormat={}{0:0}%}"
                                            HorizontalAlignment="Center"
                                            Margin="5"/>
                             </StackPanel>
@@ -120,12 +120,11 @@
                                            HorizontalAlignment="Center"
                                            Margin="5 0"/>
 
-                                    <TextBlock Text="{Binding EventName}"
+                                    <TextBlock Text="{Binding SummaryDescription}"
                                            HorizontalAlignment="Center"
+                                           TextWrapping="WrapWithOverflow"
                                            Margin="5 0"/>
                                 </StackPanel>
-                                <TextBlock Text="{Binding Description}"
-                                           Margin="20 0"/>
                             </StackPanel>                            
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
