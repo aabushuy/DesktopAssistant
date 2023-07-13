@@ -12,7 +12,7 @@ namespace Assistant.Wpf.ViewModel
     {
         private readonly IWeatherService _weatherService;
         private WeatherForecast _forecast = new();
-        private const int _hourlyCount = 7;
+        private const int _hourlyCount = 6;
 
 
         private DateTime _updateTime;
@@ -49,10 +49,7 @@ namespace Assistant.Wpf.ViewModel
 
         public ObservableCollection<WeatherAlert> Alerts { get; private set; }
 
-        /// <summary>
-        /// Update per 2 minutes
-        /// </summary>
-        public WeatherViewModel() : base(1000 * 60 * 2)
+        public WeatherViewModel() : base(1000 * 15)
         {
             _weatherService = new WeatherService();
 
@@ -67,7 +64,7 @@ namespace Assistant.Wpf.ViewModel
 
             Hourly = new ObservableCollection<WeatherForecast>(
                 _forecast.Hourly
-                    .Where(h => h.DT > UpdateTime)
+                    .Where(h => h.DT > UpdateTime && h.DT.Hour % 2 == 0)
                     .OrderBy(h => h.DT)
                     .Take(_hourlyCount));
 

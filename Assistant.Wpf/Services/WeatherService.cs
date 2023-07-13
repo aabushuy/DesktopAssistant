@@ -39,7 +39,7 @@ namespace Assistant.Wpf.Services
         {
             FileInfo cashFile = new(_weatherCacheFileName);
 
-            bool needToUpload = !cashFile.Exists|| cashFile.CreationTime.AddMinutes(_fileCashIntervalMinutes) < DateTime.Now;
+            bool needToUpload = !cashFile.Exists || cashFile.CreationTime.AddMinutes(_fileCashIntervalMinutes) < DateTime.Now;
 
             if (needToUpload)
             {
@@ -129,12 +129,11 @@ namespace Assistant.Wpf.Services
 
         private static DateTime GetTimeFromUtc(long seconds)
         {
-            var startDt = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+            var zeroTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
 
-            //offset
-            startDt = startDt.AddSeconds(3 * 3600);
+            var offseZeroTime = zeroTime.AddSeconds(3 * 3600);
 
-            return startDt.AddSeconds(seconds);
+            return offseZeroTime.AddSeconds(seconds);
         }
 
     }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using System.Timers;
 
 namespace Assistant.Wpf.ViewModel
 {
@@ -14,7 +13,7 @@ namespace Assistant.Wpf.ViewModel
 
         public string TimeSeconds => _currentTime.ToString("ss");
 
-        public string DateString => _currentTime.ToString("MMMM, d");
+        public string DateString => _currentTime.ToString("dddd, d");
 
         private DateTime CurrentTime 
         {

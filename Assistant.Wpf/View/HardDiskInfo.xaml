@@ -10,10 +10,8 @@
     <UserControl.DataContext>
         <vm:HardDiskViewModel/>
     </UserControl.DataContext>
-    <Border CornerRadius="16">
-        <Border.Background>
-            <SolidColorBrush Color="Black" Opacity="0.5" />
-        </Border.Background>
+    <Border CornerRadius="{StaticResource BarCornerRadius}"
+            Background="{StaticResource CommonBackgroundBrush}">
 
         <StackPanel>
             <ItemsControl ItemsSource="{Binding DriveInfos}">
@@ -40,7 +38,7 @@
                                 Width="200"
                                 Margin="5"
                                 Foreground="White"
-                                Background="Gray"
+                                Background="{x:Null}"
                                 />
                             <TextBlock 
                                 Text="{Binding SizeText}"

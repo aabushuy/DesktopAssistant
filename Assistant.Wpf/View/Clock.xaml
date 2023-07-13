@@ -10,11 +10,9 @@
     <UserControl.DataContext>
         <vm:ClockViewModel/>
     </UserControl.DataContext>
-    
-    <Border CornerRadius="16">
-        <Border.Background>
-            <SolidColorBrush Color="Black" Opacity="0.5" />
-        </Border.Background>
+
+    <Border CornerRadius="{StaticResource BarCornerRadius}"
+            Background="{StaticResource CommonBackgroundBrush}">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>

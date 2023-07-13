@@ -1,9 +1,21 @@
 ﻿<Application x:Class="Assistant.Wpf.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Assistant.Wpf"
+             xmlns:local="clr-namespace:Assistant.Wpf" xmlns:sys="clr-namespace:System;assembly=System.Runtime"
              StartupUri="View/MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush 
+            x:Key="CommonBackgroundBrush"
+            Color="Black" 
+            Opacity="0.5" />
+
+        <sys:Double x:Key="BarRadius">16</sys:Double>
+        <CornerRadius x:Key="BarCornerRadius" 
+           TopLeft="{StaticResource BarRadius}" 
+           TopRight="{StaticResource BarRadius}" 
+           BottomRight="{StaticResource BarRadius}" 
+           BottomLeft="{StaticResource BarRadius}" />  
+        
+        
     </Application.Resources>
 </Application>
