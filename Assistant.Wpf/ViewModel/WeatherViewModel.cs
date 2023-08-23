@@ -37,6 +37,7 @@ namespace Assistant.Wpf.ViewModel
                 StringBuilder sb = new();
                 sb.AppendLine($"Sunrise:  {_forecast.Sunrise:HH:mm}");
                 sb.AppendLine($"Sunset:   {_forecast.Sunset:HH:mm}");
+                sb.AppendLine();
                 sb.AppendLine($"Wind: {Math.Round(_forecast.WindSpeed)} m/s");
                 sb.AppendLine($"Pressure: {GetPressureConverted(_forecast.Pressure)} mmHg");
                 sb.AppendLine($"Humidity: {_forecast.Humidity} %");

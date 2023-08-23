@@ -14,8 +14,57 @@
            TopLeft="{StaticResource BarRadius}" 
            TopRight="{StaticResource BarRadius}" 
            BottomRight="{StaticResource BarRadius}" 
-           BottomLeft="{StaticResource BarRadius}" />  
-        
-        
+           BottomLeft="{StaticResource BarRadius}" />
+
+        <Style TargetType="{x:Type Button}" x:Key="InvertColorButton">
+            <Setter Property="Background" Value="{StaticResource CommonBackgroundBrush}"/>
+            <Setter Property="Foreground" Value="White"/>            
+            <Setter Property="Cursor" Value="Hand" />
+            
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" 
+                                Padding="10 5"
+                                Margin="10 1 10 0"
+                                CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="WhiteSmoke"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" x:Key="InvertColorButtonLeft">
+            <Setter Property="Background" Value="{StaticResource CommonBackgroundBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" 
+                                Padding="10 5"
+                                Margin="10 1 10 0"
+                                CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="WhiteSmoke"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
     </Application.Resources>
 </Application>

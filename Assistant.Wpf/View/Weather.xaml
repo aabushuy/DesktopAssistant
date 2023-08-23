@@ -116,9 +116,11 @@
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="{Binding HoursLeft, StringFormat={}{0}h}"
                                            HorizontalAlignment="Center"
+                                           MinWidth="30"
                                            Margin="5 0"/>
 
                                     <TextBlock Text="{Binding SummaryDescription}"
+                                           MaxWidth="260"
                                            HorizontalAlignment="Center"
                                            TextWrapping="WrapWithOverflow"
                                            Margin="5 0"/>

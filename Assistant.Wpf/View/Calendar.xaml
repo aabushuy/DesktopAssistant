@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Assistant.Wpf.View"
              xmlns:vm="clr-namespace:Assistant.Wpf.ViewModel"
              mc:Ignorable="d" 
-             Height="230" Width="300">
+             MinHeight="230" Width="300">
     <UserControl.DataContext>
         <vm:CalendarViewModel/>
     </UserControl.DataContext>

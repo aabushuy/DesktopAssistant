@@ -7,7 +7,7 @@ namespace Assistant.Wpf.ViewModel
     {
         private DateTime _currentTime;
 
-        public string TimeString => _currentTime.ToString("hh:mm");
+        public string TimeString => _currentTime.ToString("HH:mm");
 
         public string TimeAmPm => _currentTime.ToString("tt");
 
