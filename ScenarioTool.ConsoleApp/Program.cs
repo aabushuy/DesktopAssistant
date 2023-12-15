@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Logging.Console;
 using ScenarioTool.ConsoleApp;
-using ScenarioTool.ConsoleApp.Log;
+using ScenarioTool.ConsoleApp.LogFormatters;
 using ScenarioTool.Shared;
 
 IHost host = Host.CreateDefaultBuilder(args)
