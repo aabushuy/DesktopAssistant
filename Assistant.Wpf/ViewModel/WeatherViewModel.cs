@@ -91,7 +91,7 @@ namespace Assistant.Wpf.ViewModel
                     ? "-"
                     : string.Empty;
 
-            return $"{sign}{Math.Round(temp)}°C";
+            return $"{sign}{Math.Abs(Math.Round(temp))}°C";
         }
 
         private static int GetPressureConverted(double hPa) => (int)Math.Round(hPa * 0.750062);

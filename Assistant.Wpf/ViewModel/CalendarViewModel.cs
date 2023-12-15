@@ -39,7 +39,7 @@ namespace Assistant.Wpf.ViewModel
                 _monthDays[weekIndex] = new CalendarDay[7];
                 
                 int dayIndex = weekIndex == 0
-                    ? (int)cursorDate.DayOfWeek - 1
+                    ? RuDayOfWeek(cursorDate.DayOfWeek)
                     : 0;
 
                 for (; dayIndex < 7; dayIndex++)
@@ -60,6 +60,19 @@ namespace Assistant.Wpf.ViewModel
 
             return Task.CompletedTask;
         }
+
+        private static int RuDayOfWeek(DayOfWeek dayOfWeek) 
+            => (int)dayOfWeek switch
+            {
+                1 => 0,
+                2 => 1,
+                3 => 2,
+                4 => 3,
+                5 => 4,
+                6 => 5,
+                0 => 6,
+                _ => throw new IndexOutOfRangeException($"DayOfWeek: {dayOfWeek}")
+            };
     }
 }
 

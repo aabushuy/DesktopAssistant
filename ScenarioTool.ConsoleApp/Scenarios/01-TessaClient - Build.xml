@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Name>Tessa Client - Build and Deploy</Name>
+	<Steps>
+		<ScenarioStep Name="Build project" ActionType="RunProcess">
+			<Params>
+				<StepParam Key="AppPath">d:\Projects\Assistant\ScenarioTool.ConsoleApp\Scenarios\SubScenarios\TessaClient_build.bat</StepParam>
+			</Params>
+		</ScenarioStep>
+		<ScenarioStep Name="Copy binaries" ActionType="CopyFolder">			
+			<Params>
+				<StepParam Key="DirectoryFrom">d:\Git\rtk-aprf\Source\Bin\Tessa.Extensions.Client\</StepParam>
+				<StepParam Key="DirectoryTo">d:\Git\rtk-aprf\Supply\build_aprf\Workstations\TessaClient\extensions\</StepParam>
+			</Params>
+		</ScenarioStep>		
+		<ScenarioStep Name="Fix BaseAddress" ActionType="TextReplace">
+			<Params>
+				<StepParam Key="FilePath">d:\Git\rtk-aprf\Supply\build_aprf\Workstations\TessaClient\app.json</StepParam>
+				<StepParam Key="From">"BaseAddress": "https://localhost/tessa"</StepParam>
+				<StepParam Key="To">"BaseAddress": "https://localhost/tessa_aprf"</StepParam>
+			</Params>
+		</ScenarioStep>		
+	</Steps>
+</Scenario>
