@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-	<Name>Tessa Client - Annotator Group (OkynkovaVL)</Name>
+	<Name>Local Tessa Client</Name>
 	<Steps>
 		<ScenarioStep Name="Build project" ActionType="RunProcess">
 			<Params>
 				<StepParam Key="AppPath">d:\Git\rtk-aprf\Supply\build_aprf\Workstations\TessaClient\TessaClient.exe</StepParam>
-				<StepParam>/u:OkynkovaVL</StepParam>
-				<StepParam>/p:123456</StepParam>
+				<StepParam>/u:Kovaleva_TE</StepParam>
+				<StepParam>/p:1234567</StepParam>
 			</Params>
 		</ScenarioStep>		
 	</Steps>
