@@ -13,7 +13,7 @@
     <Border CornerRadius="{StaticResource BarCornerRadius}"
             Background="{StaticResource CommonBackgroundBrush}">
 
-        <StackPanel>
+        <StackPanel Margin="0 5">
             <ItemsControl ItemsSource="{Binding DriveInfos}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>

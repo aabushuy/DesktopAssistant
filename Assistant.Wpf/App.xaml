@@ -9,6 +9,11 @@
             Color="Black" 
             Opacity="0.5" />
 
+        <SolidColorBrush 
+             x:Key="CommonBackgroundBrushLight"
+             Color="White" 
+             Opacity="0.3" />
+
         <sys:Double x:Key="BarRadius">16</sys:Double>
         <CornerRadius x:Key="BarCornerRadius" 
            TopLeft="{StaticResource BarRadius}" 

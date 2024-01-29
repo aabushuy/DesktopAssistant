@@ -5,17 +5,15 @@ VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assistant.Wpf", "Assistant.Wpf\Assistant.Wpf.csproj", "{91AF7575-C284-40F8-9E3C-BA242BAEC3BB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assistant.WpfApp", "Assistant.WpfApp\Assistant.WpfApp.csproj", "{40F766B2-7752-4215-937A-2EB4A97D56A9}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{8D99D27F-6283-49E1-BDFE-966B5F1D4D4F}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pomodoro", "Pomodoro\Pomodoro.csproj", "{A1A410A6-7669-425D-9DD0-509EE4087006}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScenarioTool", "ScenarioTool\ScenarioTool.csproj", "{51FF1346-7156-4030-A439-25AD3096C04D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioTool.ConsoleApp", "ScenarioTool.ConsoleApp\ScenarioTool.ConsoleApp.csproj", "{33AD2F85-AB32-4CFB-9F91-16149CF35A34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScenarioTool.ConsoleApp", "ScenarioTool.ConsoleApp\ScenarioTool.ConsoleApp.csproj", "{33AD2F85-AB32-4CFB-9F91-16149CF35A34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScenarioTool.Shared", "ScenarioTool.Shared\ScenarioTool.Shared.csproj", "{85ECC4D0-A534-4549-82B1-D984D61EA9A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScenarioTool.Shared", "ScenarioTool.Shared\ScenarioTool.Shared.csproj", "{85ECC4D0-A534-4549-82B1-D984D61EA9A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assistant.Wpf2", "Assistant.Wpf2\Assistant.Wpf2.csproj", "{AEAA9C55-3DD0-4A26-9250-0AAF80C1B2B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,14 +25,6 @@ Global
 		{91AF7575-C284-40F8-9E3C-BA242BAEC3BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91AF7575-C284-40F8-9E3C-BA242BAEC3BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91AF7575-C284-40F8-9E3C-BA242BAEC3BB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{40F766B2-7752-4215-937A-2EB4A97D56A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{40F766B2-7752-4215-937A-2EB4A97D56A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{40F766B2-7752-4215-937A-2EB4A97D56A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{40F766B2-7752-4215-937A-2EB4A97D56A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A1A410A6-7669-425D-9DD0-509EE4087006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A1A410A6-7669-425D-9DD0-509EE4087006}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A1A410A6-7669-425D-9DD0-509EE4087006}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A1A410A6-7669-425D-9DD0-509EE4087006}.Release|Any CPU.Build.0 = Release|Any CPU
 		{51FF1346-7156-4030-A439-25AD3096C04D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{51FF1346-7156-4030-A439-25AD3096C04D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51FF1346-7156-4030-A439-25AD3096C04D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,12 +37,15 @@ Global
 		{85ECC4D0-A534-4549-82B1-D984D61EA9A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85ECC4D0-A534-4549-82B1-D984D61EA9A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85ECC4D0-A534-4549-82B1-D984D61EA9A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEAA9C55-3DD0-4A26-9250-0AAF80C1B2B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEAA9C55-3DD0-4A26-9250-0AAF80C1B2B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEAA9C55-3DD0-4A26-9250-0AAF80C1B2B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEAA9C55-3DD0-4A26-9250-0AAF80C1B2B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{A1A410A6-7669-425D-9DD0-509EE4087006} = {8D99D27F-6283-49E1-BDFE-966B5F1D4D4F}
 		{51FF1346-7156-4030-A439-25AD3096C04D} = {8D99D27F-6283-49E1-BDFE-966B5F1D4D4F}
 		{33AD2F85-AB32-4CFB-9F91-16149CF35A34} = {8D99D27F-6283-49E1-BDFE-966B5F1D4D4F}
 		{85ECC4D0-A534-4549-82B1-D984D61EA9A3} = {8D99D27F-6283-49E1-BDFE-966B5F1D4D4F}

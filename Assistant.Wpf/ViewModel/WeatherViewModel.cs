@@ -12,7 +12,8 @@ namespace Assistant.Wpf.ViewModel
     {
         private readonly IWeatherService _weatherService;
         private WeatherForecast _forecast = new();
-        private const int _hourlyCount = 6;
+        private const int _hourlyCount = 5;
+        private const int _dailyCount = 5;
 
 
         private DateTime _updateTime;
@@ -35,18 +36,20 @@ namespace Assistant.Wpf.ViewModel
             get 
             { 
                 StringBuilder sb = new();
-                sb.AppendLine($"Sunrise:  {_forecast.Sunrise:HH:mm}");
-                sb.AppendLine($"Sunset:   {_forecast.Sunset:HH:mm}");
+                sb.AppendLine($"Sunrise:\t{_forecast.Sunrise:HH:mm}");
+                sb.AppendLine($"Sunset:\t{_forecast.Sunset:HH:mm}");
                 sb.AppendLine();
-                sb.AppendLine($"Wind: {Math.Round(_forecast.WindSpeed)} m/s");
-                sb.AppendLine($"Pressure: {GetPressureConverted(_forecast.Pressure)} mmHg");
-                sb.AppendLine($"Humidity: {_forecast.Humidity} %");
+                sb.AppendLine($"W: {Math.Round(_forecast.WindSpeed)} m/s");
+                sb.AppendLine($"P: {GetPressureConverted(_forecast.Pressure)} mmHg");
+                sb.AppendLine($"H: {_forecast.Humidity} %");
 
                 return sb.ToString();
             }            
         }
 
         public ObservableCollection<WeatherForecast> Hourly { get; private set; }
+        
+        public ObservableCollection<WeatherForecast> Daily { get; private set; }
 
         public ObservableCollection<WeatherAlert> Alerts { get; private set; }
 
@@ -65,13 +68,21 @@ namespace Assistant.Wpf.ViewModel
 
             Hourly = new ObservableCollection<WeatherForecast>(
                 _forecast.Hourly
-                    .Where(h => h.DT > UpdateTime && h.DT.Hour % 2 == 0)
+                    .Where(h => h.DT > UpdateTime && h.DT.Hour % 3 == 0)
                     .OrderBy(h => h.DT)
                     .Take(_hourlyCount));
 
+            Daily = new ObservableCollection<WeatherForecast>(
+                _forecast.Daily
+                    .Where(h => h.DT > UpdateTime)
+                    .OrderBy(h => h.DT)
+                    .Take(_dailyCount));
+
             Alerts = new ObservableCollection<WeatherAlert>(
                 _forecast.WeatherAlerts
-                    .Where(w => !string.IsNullOrWhiteSpace(w.Description) && (w.StartDate > UpdateTime || w.EndDate > UpdateTime))
+                    .Where(w => 
+                        (!string.IsNullOrWhiteSpace(w.EventName) || !string.IsNullOrWhiteSpace(w.Description)) 
+                        && (w.StartDate > UpdateTime || w.EndDate > UpdateTime))
                     .OrderBy(w => w.StartDate)
                     .ThenBy(w => w.EndDate));
 
@@ -80,6 +91,7 @@ namespace Assistant.Wpf.ViewModel
             RaisePropertyChanged(nameof(WeatherDescription));
             RaisePropertyChanged(nameof(CurrentWeatherDetails));
             RaisePropertyChanged(nameof(Hourly));
+            RaisePropertyChanged(nameof(Daily));
             RaisePropertyChanged(nameof(Alerts));
         }
 

@@ -88,10 +88,11 @@ namespace Assistant.Wpf.Services
                 Pressure = dynamicData.current.pressure,
                 Humidity = dynamicData.current.humidity,
                 WindSpeed = dynamicData.current.wind_speed,
-                WeatherDescription = $"{dynamicData.current.weather[0].main}, {dynamicData.current.weather[0].description}",
+                WeatherDescription = $"{dynamicData.current.weather[0].main}",
             };
 
             ParseHourlyForecast(weatherForecast, dynamicData);
+            ParseDailyForecast(weatherForecast, dynamicData);
             ParseAlerts(weatherForecast, dynamicData);
 
             return weatherForecast;
@@ -110,6 +111,20 @@ namespace Assistant.Wpf.Services
             }
         }
 
+        private static void ParseDailyForecast(WeatherForecast forecast, dynamic data)
+        {
+            foreach (var dayForecast in data.daily)
+            {
+                forecast.Daily.Add(new WeatherForecast()
+                {
+                    DT = GetTimeFromUtc((long)dayForecast.dt),
+                    Temperature = dayForecast.temp.day,
+                    Temperature2 = dayForecast.temp.night,
+                    Pop = dayForecast.pop * 100,
+                });
+            }
+        }
+
         private static void ParseAlerts(WeatherForecast forecast, dynamic data)
         {
             var alerts = data.alerts ?? Array.Empty<dynamic>();
@@ -122,6 +137,17 @@ namespace Assistant.Wpf.Services
                     EndDate = GetTimeFromUtc((long)alert.end),
                     EventName = alert.@event,
                     Description = alert.description,
+                });
+            }
+
+            if (forecast.WeatherAlerts.Count == 0)
+            {
+                forecast.WeatherAlerts.Add(new WeatherAlert()
+                {
+                    StartDate = DateTime.Today,
+                    EndDate = DateTime.Now.AddHours(3),
+                    EventName = "It's calm",
+                    Description = string.Empty,
                 });
             }
         }

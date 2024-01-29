@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
-namespace Assistant.WpfApp
+namespace Assistant.Wpf2
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -14,4 +10,5 @@ namespace Assistant.WpfApp
     public partial class App : Application
     {
     }
+
 }

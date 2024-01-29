@@ -14,7 +14,9 @@ namespace Assistant.Wpf.Models
         public DateTime Sunset { get; init; }
 
         public double Temperature { get; init; }
-        
+
+        public double Temperature2 { get; init; }
+
         public double FeelsLike { get; init; }
 
         public double Pressure { get; init; }
@@ -28,6 +30,8 @@ namespace Assistant.Wpf.Models
         public double Pop { get; init; }
 
         public List<WeatherForecast> Hourly { get; } = new List<WeatherForecast>();
+
+        public List<WeatherForecast> Daily { get; } = new List<WeatherForecast>();
 
         public List<WeatherAlert> WeatherAlerts { get; } = new List<WeatherAlert>();
     }
