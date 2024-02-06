@@ -145,7 +145,7 @@
 
                                     <TextBlock
                                         Grid.Row="0"
-                                        Text="{Binding DT, StringFormat={}{0:dd.MM}}"
+                                        Text="{Binding DT, StringFormat={}{0:ddd}}"
                                         FontSize="10"
                                         HorizontalAlignment="Center"
                                         Margin="5"/>

@@ -139,17 +139,6 @@ namespace Assistant.Wpf.Services
                     Description = alert.description,
                 });
             }
-
-            if (forecast.WeatherAlerts.Count == 0)
-            {
-                forecast.WeatherAlerts.Add(new WeatherAlert()
-                {
-                    StartDate = DateTime.Today,
-                    EndDate = DateTime.Now.AddHours(3),
-                    EventName = "It's calm",
-                    Description = string.Empty,
-                });
-            }
         }
 
 
