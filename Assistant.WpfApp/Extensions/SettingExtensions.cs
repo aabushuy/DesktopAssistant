@@ -1,0 +1,16 @@
+﻿using System.ComponentModel;
+using Assistant.WpfApp.Model;
+
+namespace Assistant.WpfApp.Extensions;
+
+public static class SettingExtensions
+{
+    public static string GetStringOrDefault(this Settings settings, string name, string defaultValue = "")
+        => settings[name].ToString() ?? defaultValue;
+    
+    public static int GetIntOrDefault(this Settings settings, string name, int defaultValue = 0)
+        => int.TryParse(settings[name].ToString(), out var parsed) ? parsed : defaultValue;
+    
+    public static double GetDoubleOrDefault(this Settings settings, string name, double defaultValue = 0)
+        => double.TryParse(settings[name].ToString(), out var parsed) ? parsed : defaultValue;
+}

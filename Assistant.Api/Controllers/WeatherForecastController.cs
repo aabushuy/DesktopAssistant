@@ -1,3 +1,4 @@
+using Assistant.Domain.Weather;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Assistant.Api.Controllers
@@ -6,11 +7,6 @@ namespace Assistant.Api.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<WeatherForecastController> _logger;
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
@@ -18,16 +14,27 @@ namespace Assistant.Api.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        [HttpGet]
+        public WeatherForecast Get(byte mask = (byte)WeatherLevel.Now)
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            WeatherForecast forecast = new();
+
+            if (IsMaskHasWeatherLevel(mask, WeatherLevel.Hour))
             {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+                forecast.Hours = Array.Empty<WeatherHour>();
+            }
+
+            if (IsMaskHasWeatherLevel(mask, WeatherLevel.Day))
+            {
+                forecast.Days = Array.Empty<WeatherDay>();
+            }
+
+            return forecast;
+        }
+
+        private static bool IsMaskHasWeatherLevel(byte mask, WeatherLevel level)
+        {
+            return (byte)(mask & (byte)level) == (byte)level;
         }
     }
 }

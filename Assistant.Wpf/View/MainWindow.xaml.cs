@@ -15,7 +15,8 @@ namespace Assistant.Wpf
         {
             InitializeComponent();
 
-            var selectedScreen = Screen.AllScreens.First();
+            var selectedScreen = Screen.AllScreens.Skip(1).FirstOrDefault()
+                ?? Screen.AllScreens.Skip(1).First();
 
             Left = selectedScreen.WorkingArea.Right - Width - _marginWindow;
         }
