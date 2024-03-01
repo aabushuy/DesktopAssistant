@@ -8,7 +8,9 @@ public static class SettingNames
     
     public const string MainWindowHeight = nameof(MainWindowHeight);
     
-    public const string MainWindowMargin = nameof(MainWindowMargin);
+    public const string MainWindowMarginTop = nameof(MainWindowMarginTop);
+    
+    public const string MainWindowMarginRight = nameof(MainWindowMarginRight);
     
     public const string GlobalBackgroundTransparency = nameof(GlobalBackgroundTransparency);
 }

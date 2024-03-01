@@ -1,20 +1,43 @@
-﻿using Assistant.WpfApp.Model;
+﻿using System.IO;
+using Assistant.WpfApp.Model;
+using static System.Text.Json.JsonSerializer;
 
 namespace Assistant.WpfApp.Repository;
 
 public class SettingRepository : ISettingRepository
 {
-    private static Settings _settings = new();
+    private const string SettingFileName = "ui_settings.json";
     
-    public Task<Settings> GetSettings()
+    private static Settings _settings = new();
+
+    public SettingRepository()
     {
-        return Task.FromResult(_settings);
+        var fi = new FileInfo(SettingFileName);
+        if (!fi.Exists)
+        {
+            SetSettings(_settings);
+        }
+
+        ReadFromFile();
     }
 
-    public Task SetSettings(Settings settings)
+    public Task<Settings> GetSettings() => Task.FromResult(_settings);
+
+    public async Task SetSettings(Settings settings)
     {
         _settings = settings;
+        await SaveToFile();
+    }
 
-        return Task.CompletedTask;
+    private static async Task ReadFromFile()
+    {
+        await using var fsRead = new FileStream(SettingFileName, FileMode.OpenOrCreate);
+        _settings = await DeserializeAsync<Settings>(fsRead) ?? new Settings();
+    }
+
+    private static async Task SaveToFile()
+    {
+        await using var fwWrite = new FileStream(SettingFileName, FileMode.OpenOrCreate);
+        await SerializeAsync(fwWrite, _settings);
     }
 }

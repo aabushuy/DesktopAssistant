@@ -52,9 +52,18 @@
             <TextBlock
                 Style="{StaticResource NormalControl}"
                 MinWidth="{StaticResource CaptionMinWidth}"
-                Text="Main window margin"/>
+                Text="Main window margin top"/>
             <TextBox
-                Name="MainWindowMargin"
+                Name="MainWindowMarginTop"
+                Style="{StaticResource NormalControl}"/>
+        </DockPanel>
+        <DockPanel LastChildFill="True">
+            <TextBlock
+                Style="{StaticResource NormalControl}"
+                MinWidth="{StaticResource CaptionMinWidth}"
+                Text="Main window margin right"/>
+            <TextBox
+                Name="MainWindowMarginRight"
                 Style="{StaticResource NormalControl}"/>
         </DockPanel>
         <DockPanel LastChildFill="True">

@@ -8,7 +8,7 @@ using WpfScreenHelper;
 
 namespace Assistant.WpfApp.Views;
 
-public partial class MainSettingsWindow : Window
+public partial class MainSettingsWindow
 {
     private readonly ISettingRepository _settingRepository;
     private readonly Settings _allSettings;
@@ -40,14 +40,15 @@ public partial class MainSettingsWindow : Window
 
     private void ReadSettings()
     {
-        var selectedDisplay = _allSettings.GetStringOrDefault(SettingNames.Display);
+        var selectedDisplay = _allSettings.GetString(SettingNames.Display);
         Screens.SelectedItem = Screen.AllScreens
             .FirstOrDefault(s => s.DeviceName == selectedDisplay) ?? null;
         
-        MainWindowWidth.Text = _allSettings.GetStringOrDefault(SettingNames.MainWindowWidth);
-        MainWindowHeight.Text =  _allSettings.GetStringOrDefault(SettingNames.MainWindowHeight);
-        MainWindowMargin.Text =  _allSettings.GetStringOrDefault(SettingNames.MainWindowMargin);
-        GlobalBackgroundTransparency.Text =  _allSettings.GetStringOrDefault(SettingNames.GlobalBackgroundTransparency);
+        MainWindowWidth.Text = _allSettings.GetString(SettingNames.MainWindowWidth);
+        MainWindowHeight.Text =  _allSettings.GetString(SettingNames.MainWindowHeight);
+        MainWindowMarginTop.Text =  _allSettings.GetString(SettingNames.MainWindowMarginTop);
+        MainWindowMarginRight.Text =  _allSettings.GetString(SettingNames.MainWindowMarginRight);
+        GlobalBackgroundTransparency.Text =  _allSettings.GetString(SettingNames.GlobalBackgroundTransparency);
     }
     
     private async Task SaveSettings()
@@ -56,7 +57,8 @@ public partial class MainSettingsWindow : Window
         
         _allSettings[SettingNames.MainWindowWidth] = GetIntOrDefault(MainWindowWidth);
         _allSettings[SettingNames.MainWindowHeight] = GetIntOrDefault(MainWindowHeight);
-        _allSettings[SettingNames.MainWindowMargin] = GetIntOrDefault(MainWindowMargin);
+        _allSettings[SettingNames.MainWindowMarginTop] = GetIntOrDefault(MainWindowMarginTop);
+        _allSettings[SettingNames.MainWindowMarginRight] = GetIntOrDefault(MainWindowMarginRight);
         _allSettings[SettingNames.GlobalBackgroundTransparency] = GetIntOrDefault(GlobalBackgroundTransparency);
         
         await _settingRepository.SetSettings(_allSettings);

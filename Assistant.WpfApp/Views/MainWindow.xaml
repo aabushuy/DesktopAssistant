@@ -4,17 +4,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assistant.WpfApp"
+        xmlns:v="clr-namespace:Assistant.WpfApp.Views"
         xmlns:ic="clr-namespace:FluentIcons.WPF;assembly=FluentIcons.WPF"
         mc:Ignorable="d"
         Title="MainWindow"
+        AllowsTransparency="True"
+        Background="{x:Null}"
+        Foreground="White"
         WindowStyle="None">
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
-            <Setter Property="Margin" Value="5 0"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="{x:Null}"/>
         </Style>
     </Window.Resources>
+    
     <StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+        <v:WidgetClock Margin="0 20 0 0"/>
+        <StackPanel 
+            Orientation="Horizontal" 
+            HorizontalAlignment="Right">
             <Button 
                 Name="SettingsButton"
                 Click="ButtonBase_OnClick"

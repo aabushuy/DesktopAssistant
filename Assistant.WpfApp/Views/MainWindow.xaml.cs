@@ -64,16 +64,17 @@ public partial class MainWindow
 
     private void ApplySettings(Settings settings)
     {
-        var displayName = settings.GetStringOrDefault(SettingNames.Display);
+        var displayName = settings.GetString(SettingNames.Display);
         var screen = Screen.AllScreens.FirstOrDefault(s => s.DeviceName == displayName) ?? Screen.PrimaryScreen;
         
-        var mainMargin = settings.GetIntOrDefault(SettingNames.MainWindowMargin);
+        var mainMarginTop = settings.GetInt(SettingNames.MainWindowMarginTop);
+        var mainMarginRight = settings.GetInt(SettingNames.MainWindowMarginRight);
         
-        Width = settings.GetDoubleOrDefault(SettingNames.MainWindowWidth, Width);
-        Height = settings.GetDoubleOrDefault(SettingNames.MainWindowHeight, Height);
+        Width = settings.GetDouble(SettingNames.MainWindowWidth, Width);
+        Height = settings.GetDouble(SettingNames.MainWindowHeight, Height);
         
-        Top = 0;
-        Left = screen.WorkingArea.Right - Width - mainMargin;
+        Top = mainMarginTop;
+        Left = screen.WorkingArea.Right - Width - mainMarginRight;
         
         //TODO: GlobalBackgroundTransparency
     }

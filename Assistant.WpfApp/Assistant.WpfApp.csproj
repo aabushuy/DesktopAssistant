@@ -22,4 +22,8 @@
       <PackageReference Include="WpfScreenHelper" Version="2.1.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Assistant.Domain\Assistant.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

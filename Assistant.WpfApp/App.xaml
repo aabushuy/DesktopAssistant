@@ -7,7 +7,7 @@
         <SolidColorBrush 
             x:Key="CommonBackgroundBrush"
             Color="Black" 
-            Opacity="0.5" />
+            Opacity="0.4" />
 
         <SolidColorBrush 
              x:Key="CommonBackgroundBrushLight"

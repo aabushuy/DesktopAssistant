@@ -2,7 +2,6 @@
 {
     public class WeatherForecast
     {
-
         public DateTime ForecastTime { get; set; }
         public DateTime CreatedTime => DateTime.Now;        
         public IEnumerable<WeatherHour> Hours { get; set; }
