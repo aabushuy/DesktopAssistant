@@ -15,7 +15,9 @@ namespace Assistant.Wpf.Models
 
         public double Temperature { get; init; }
 
-        public double Temperature2 { get; init; }
+        public double MinTemperature { get; init; }
+
+        public double MaxTemperature { get; init; }
 
         public double FeelsLike { get; init; }
 

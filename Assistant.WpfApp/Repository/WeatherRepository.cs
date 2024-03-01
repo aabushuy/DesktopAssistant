@@ -4,7 +4,7 @@ namespace Assistant.WpfApp.Repository;
 
 public class WeatherRepository : IWeatherRepository
 {
-    public Task<WeatherForecast> GetWeatherForecast()
+    public Task<WeatherForecast> GetWeatherForecast(WeatherLevel weatherLevel)
     {
         var forecast = new WeatherForecast();
 

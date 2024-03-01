@@ -4,5 +4,5 @@ namespace Assistant.WpfApp.Repository;
 
 public interface IWeatherRepository
 {
-    Task<WeatherForecast> GetWeatherForecast();
+    Task<WeatherForecast> GetWeatherForecast(WeatherLevel weatherLevel);
 }

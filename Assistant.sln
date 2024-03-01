@@ -13,11 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScenarioTool.ConsoleApp", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScenarioTool.Shared", "ScenarioTool.Shared\ScenarioTool.Shared.csproj", "{85ECC4D0-A534-4549-82B1-D984D61EA9A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assistant.Api", "Assistant.Api\Assistant.Api.csproj", "{864DDFE9-A2A7-4525-B376-3724AAB9987C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assistant.Api", "Assistant.Api\Assistant.Api.csproj", "{864DDFE9-A2A7-4525-B376-3724AAB9987C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assistant.Domain", "Assistant.Domain\Assistant.Domain.csproj", "{CD6F2A54-76D8-40DD-9794-E388B4707326}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assistant.WpfApp", "Assistant.WpfApp\Assistant.WpfApp.csproj", "{11EBE7F2-F5A0-4BFF-A341-1B0D871D0718}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assistant.Domain", "Assistant.Domain\Assistant.Domain.csproj", "{CD6F2A54-76D8-40DD-9794-E388B4707326}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,10 +47,6 @@ Global
 		{CD6F2A54-76D8-40DD-9794-E388B4707326}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD6F2A54-76D8-40DD-9794-E388B4707326}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD6F2A54-76D8-40DD-9794-E388B4707326}.Release|Any CPU.Build.0 = Release|Any CPU
-		{11EBE7F2-F5A0-4BFF-A341-1B0D871D0718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{11EBE7F2-F5A0-4BFF-A341-1B0D871D0718}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{11EBE7F2-F5A0-4BFF-A341-1B0D871D0718}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{11EBE7F2-F5A0-4BFF-A341-1B0D871D0718}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

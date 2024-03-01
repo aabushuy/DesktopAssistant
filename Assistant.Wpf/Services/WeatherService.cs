@@ -119,7 +119,7 @@ namespace Assistant.Wpf.Services
                 {
                     DT = GetTimeFromUtc((long)dayForecast.dt),
                     Temperature = dayForecast.temp.day,
-                    Temperature2 = dayForecast.temp.night,
+                    MinTemperature = dayForecast.temp.night,
                     Pop = dayForecast.pop * 100,
                 });
             }

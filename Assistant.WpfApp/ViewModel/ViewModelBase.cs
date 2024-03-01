@@ -1,11 +1,9 @@
 ﻿using System.ComponentModel;
 
-namespace Assistant.WpfApp.ViewModel
+namespace Assistant.WpfApp.ViewModel;
+ public abstract class ViewModelBase : INotifyPropertyChanged
 {
-    public abstract class ViewModelBase : INotifyPropertyChanged
-    {
-        public event PropertyChangedEventHandler? PropertyChanged;
+    public event PropertyChangedEventHandler? PropertyChanged;
 
-        protected void RaisePropertyChanged(string p) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(p));
-    }
+    protected void RaisePropertyChanged(string p) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(p));
 }

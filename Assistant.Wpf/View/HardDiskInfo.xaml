@@ -5,27 +5,28 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Assistant.Wpf.View"
              xmlns:vm="clr-namespace:Assistant.Wpf.ViewModel"
-             mc:Ignorable="d" 
-             MinHeight="100" Width="300">
+             mc:Ignorable="d">
     <UserControl.DataContext>
         <vm:HardDiskViewModel/>
     </UserControl.DataContext>
     <Border CornerRadius="{StaticResource BarCornerRadius}"
             Background="{StaticResource CommonBackgroundBrush}">
 
-        <StackPanel Margin="0 5">
+        <DockPanel Margin="0 5">
             <ItemsControl ItemsSource="{Binding DriveInfos}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel 
                                 Orientation="Vertical" 
-                                HorizontalAlignment="Left"/>
+                                HorizontalAlignment="Stretch"/>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
 
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Vertical" Margin="10 5">
+                        <StackPanel 
+                            Orientation="Vertical" 
+                            Margin="10 5 10 0">
                             <TextBlock 
                                 Text="{Binding Name}"
                                 Margin="5 0" 
@@ -35,8 +36,7 @@
                                 Maximum="100"
                                 Value="{Binding Occupancy, Mode=OneWay}"
                                 MinHeight="10"
-                                Width="200"
-                                Margin="5"
+                                Margin="5 5 0 0"
                                 Foreground="White"
                                 Background="{x:Null}"
                                 />
@@ -47,7 +47,7 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-        </StackPanel>
+        </DockPanel>
 
     </Border>
 </UserControl>

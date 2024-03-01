@@ -5,32 +5,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Assistant.Wpf.View"
              xmlns:vm="clr-namespace:Assistant.Wpf.ViewModel"
-             mc:Ignorable="d" 
-             MinHeight="300" Width="300">
+             mc:Ignorable="d">
     <UserControl.DataContext>
         <vm:WeatherViewModel/>
     </UserControl.DataContext>
 
     <Border CornerRadius="{StaticResource BarCornerRadius}"
             Background="{StaticResource CommonBackgroundBrush}">
-        <Grid Margin="10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="5*"/>
-                <ColumnDefinition Width="3*"/>
-            </Grid.ColumnDefinitions>
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="3*"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="3*"/>                
-                <RowDefinition Height="3*"/>
-                <RowDefinition Height="3*"/>
-            </Grid.RowDefinitions>
+        <StackPanel Margin="0 5">
 
             <StackPanel
-                Grid.Column="0"
-                Grid.Row="0"
-                Grid.ColumnSpan="3">
+                Margin="0 5 0 0">
                 <ItemsControl ItemsSource="{Binding Hourly}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
@@ -81,41 +66,9 @@
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </StackPanel>
-
-            <TextBlock 
-                Text="{Binding WeatherDescription, Mode=OneWay}"
-                Grid.Column="0"
-                Grid.Row="2"
-                Grid.ColumnSpan="2"
-                HorizontalAlignment="Left"                
-                FontWeight="Bold"                
-                FontSize="14"/>
-            
-            <TextBlock 
-                Text="{Binding FeelsLike, Mode=OneWay}"
-                Grid.Column="0"
-                Grid.Row="2"
-                VerticalAlignment="Bottom"
-                FontSize="12"
-                Margin="0 5"/>
-
-            <TextBlock 
-                Text="{Binding CurrentTemp, Mode=OneWay}"
-                Grid.Column="0"
-                Grid.Row="2"
-                VerticalAlignment="Center"
-                FontSize="54"/>
-
-            <TextBlock 
-                Text="{Binding CurrentWeatherDetails, Mode=OneWay}"                
-                Grid.Column="1"
-                Grid.Row="2"
-                FontSize="12"/>
             
             <StackPanel
-                Grid.Column="0"
-                Grid.Row="3"
-                Grid.ColumnSpan="3">
+                Margin="0 5 0 0">
                 <ItemsControl ItemsSource="{Binding Daily}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
@@ -177,9 +130,7 @@
                 </StackPanel>
 
             <StackPanel
-                Grid.Column="0"
-                Grid.Row="4"
-                Grid.ColumnSpan="2">
+                Margin="0 5 0 0">
                 <ItemsControl ItemsSource="{Binding Alerts}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
@@ -209,14 +160,6 @@
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </StackPanel>
-
-            <TextBlock 
-                Text="{Binding UpdateTime, StringFormat={}Updated: {0:HH:mm}}"                
-                Grid.ColumnSpan="2"
-                Grid.Row="4"
-                HorizontalAlignment="Right"                
-                VerticalAlignment="Bottom"
-                FontSize="10"/>
-        </Grid>
+        </StackPanel>
     </Border>
 </UserControl>

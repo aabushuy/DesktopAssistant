@@ -4,24 +4,42 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:v="clr-namespace:Assistant.Wpf.View"        
-        xmlns:vm="clr-namespace:Assistant.Wpf.ViewModel"        
+        xmlns:vm="clr-namespace:Assistant.Wpf.ViewModel"
+        xmlns:ic="clr-namespace:FluentIcons.WPF;assembly=FluentIcons.WPF"
         mc:Ignorable="d"
-        Title="MainWindow"         
-        MinHeight="1000"
-        Width="320"
+        Title="MainWindow"
         Top="0"
         AllowsTransparency="True" 
         Background="{x:Null}"
         Foreground="White"
         WindowStyle="None">
-    <StackPanel Orientation="Horizontal">
-        <StackPanel Orientation="Vertical" Margin="10 0">
-            <v:Clock Margin="0 20 0 10"/>
-            <v:Weather Margin="0 10"/>
-            <v:Calendar Margin="0 10"/>
-            <v:HardDiskInfo Margin="0 10"/>
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="{x:Null}"/>
+        </Style>
+    </Window.Resources>
+    <StackPanel Margin="0 5 0 0">
+        <v:Clock/>
+        <v:Weather Margin="0 10"/>
+        <v:Calendar Margin="0 10"/>
+        <v:HardDiskInfo Margin="0 10"/>
+        <StackPanel 
+        Orientation="Horizontal" 
+        HorizontalAlignment="Right">
+            <Button 
+            Name="SettingsButton"
+            Click="ButtonBase_OnClick"
+            Cursor="Hand">
+                <ic:SymbolIcon Symbol="Settings" IsFilled="False" />
+            </Button>
+            <Button 
+            Name="CloseButton"
+            Click="ButtonBase_OnClick"
+            Cursor="Hand">
+                <ic:SymbolIcon Symbol="ArrowExit" IsFilled="False" />
+            </Button>
         </StackPanel>
     </StackPanel>
-
-    
 </Window>
